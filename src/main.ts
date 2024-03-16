@@ -4,7 +4,8 @@ class TestScene extends Phaser.Scene {
     constructor() {
         super('testScene');
     }
-    preload() {
+
+    preload(): void {
         this.load.setBaseURL('https://labs.phaser.io');
 
         this.load.image('sky', 'assets/skies/space3.png');
@@ -12,7 +13,7 @@ class TestScene extends Phaser.Scene {
         this.load.image('red', 'assets/particles/red.png');
     }
 
-    create() {
+    create(): void {
         this.add.image(400, 300, 'sky');
 
         const logo = this.physics.add.image(400, 100, 'logo');
@@ -37,4 +38,4 @@ const config: Phaser.Types.Core.GameConfig = {
     scene: TestScene,
 };
 
-new Phaser.Game(config);
+new Phaser.Game(config); // eslint-disable-line no-new
